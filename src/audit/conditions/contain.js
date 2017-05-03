@@ -20,6 +20,8 @@ class Contain_Condition extends Condition
                 let regex = new RegExp(mask);
                 if (field_value.search(regex) != -1)
                 {
+                    if (this.name !== undefined)
+                        in_Case.pushRule(in_Case);
                     return true;
                 }
             }

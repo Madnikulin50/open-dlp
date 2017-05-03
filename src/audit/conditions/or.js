@@ -12,7 +12,11 @@ class Or_Condition extends Complex_Condition
         for (let cond of this.condions)
         {
             if (cond.isSatisfied(in_Case))
+            {
+                if (this.name !== undefined)
+                    in_Case.pushRule(in_Case);
                 return true;
+            }
         }
         return false;
     }

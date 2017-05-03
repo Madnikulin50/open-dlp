@@ -14,6 +14,8 @@ class And_Condition extends Complex_Condition
             if (!cond.isSatisfied(in_Case))
                 return false;
         }
+        if (this.name !== undefined)
+            in_Case.pushRule(in_Case);
         return true;
     }
 
