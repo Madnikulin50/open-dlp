@@ -19,7 +19,8 @@ class Agent
     
     static createAgentManager(in_Options)
     {
-        var 
+        var Agent_Manager = require('./manager.js'); 
+        return new Agent_Manager(in_Options);
     }
 };
 

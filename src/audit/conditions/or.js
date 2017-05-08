@@ -1,4 +1,4 @@
-import Complex_Condition from './complex_condition.js'
+var Complex_Condition = require('./complex_condition.js');
 
 class Or_Condition extends Complex_Condition
 {

@@ -1,4 +1,5 @@
-import Agent from '../index.js';
+var Agent = require('../index.js');
+var Case = require('../../case'); 
 
 class Email_Agent extends Agent
 {
@@ -6,6 +7,11 @@ class Email_Agent extends Agent
     {
 
     }
+	makeCaseFromEml(in_File)
+	{
+		let case = new Case();
+		case.setFolder();
+	}
 
 };
 

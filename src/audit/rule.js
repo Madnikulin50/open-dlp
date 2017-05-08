@@ -1,4 +1,4 @@
-import Condition from './condtion.js'; 
+var Condition = require('./condtion.js'); 
 
 class Rule
 {
