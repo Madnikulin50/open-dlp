@@ -1,4 +1,4 @@
-import Condition from '../condition.js'
+var Condition = require('../condition.js');
 
 class Not_Condition extends Condition
 {

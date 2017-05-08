@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+var fs = require('fs');
+var path = require('path');
 
 const params_fn = '.params';
 const body_fn = '.body';
@@ -28,11 +28,24 @@ class Case
         return undefined;
     }
 
+    pushRule(in_Rule)
+    {
+        this.rules.push(in_Rule);
+        storeParams();
+    }
+
+    storeParams()
+    {
+        fs.writeFile(path.join(this._folder, params_fn), JSON.stringify(this, '\t'), 'utf8');
+    }
+
 
     setParams(in_Params)
     {
         Object.assign(this, in_Params);
+        storeParams();
     } 
+
     setFolder(in_Folder)
     {
         this._folder = in_Folder;
@@ -42,7 +55,7 @@ class Case
 
     setBody(in_String, in_Callback)
     {
-        fs.writeFile(path.join(this._folder, params_fn), in_String, 'utf8', in_Callback);
+        fs.writeFile(path.join(this._folder, body_fn), in_String, 'utf8', in_Callback);
     }
 
     getBody(in_Callback)
